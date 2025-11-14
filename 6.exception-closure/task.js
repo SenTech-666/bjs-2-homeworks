@@ -16,7 +16,6 @@ function validateCount(value) {
 
 class Triangle {
   constructor(a, b, c) {
-    // Проверка существования треугольника: сумма любых двух сторон должна быть больше третьей
     if (a + b <= c || a + c <= b || b + c <= a) {
       throw new Error('Треугольник с такими сторонами не существует');
     }
@@ -30,10 +29,9 @@ class Triangle {
   }
 
   get area() {
-    // Формула Герона: S = √(p * (p - a) * (p - b) * (p - c)), где p — полупериметр
-    const p = this.perimeter / 2; // полупериметр
+    const p = this.perimeter / 2;
     const area = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
-    return parseFloat(area.toFixed(3)); // округление до 3 знаков после запятой
+    return parseFloat(area.toFixed(3));
   }
 }
 
